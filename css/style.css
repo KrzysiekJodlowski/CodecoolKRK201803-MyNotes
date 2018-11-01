@@ -17,6 +17,15 @@ html, body {
     font-weight: bold;
     color: #FFF;
 }
+
 #addNote:hover {
     background-color: #F4B25D;
+}
+
+#addNote:active {
+    color: #F1F2DA;
+}
+
+#addNote:focus {
+    outline:0;
 }
