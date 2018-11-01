@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 2%;
+    background-color: #F1F2DA;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+#addNote {
+    height: 120px;
+    width: 120px;
+    padding-top: 5px;
+    border-radius: 50%;
+    background-color: #F4DC79;
+    font-family: inherit;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #FFF;
+}
+#addNote:hover {
+    background-color: #F4B25D;
+}
