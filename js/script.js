@@ -16,6 +16,12 @@ function getNoteTopBar() {
 
     let noteTopBarDeleteButton = document.createElement('button');
     noteTopBarDeleteButton.setAttribute('class', 'delete');
+    noteTopBarDeleteButton.addEventListener('click', function () {
+        var targetElement = event.target || event.srcElement;
+        targetElement = targetElement.parentNode;
+        targetElement = targetElement.parentNode;
+        document.body.removeChild(targetElement);
+    }, false);
 
     noteTopBar.appendChild(noteTopBarTitle);
     noteTopBar.appendChild(noteTopBarDeleteButton);
