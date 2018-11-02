@@ -29,3 +29,10 @@ html, body {
 #addNote:focus {
     outline:0;
 }
+
+.note {
+    display: block;
+    width: 300px;
+    height: 400px;
+    background-color: #FFF;
+}
