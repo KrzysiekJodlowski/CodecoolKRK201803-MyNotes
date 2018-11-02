@@ -10,11 +10,15 @@ function getNoteTopBar() {
     let noteTopBar = document.createElement('span');
     noteTopBar.setAttribute('class', 'noteTopBar');
 
-    let notetopBarTitle = document.createElement('input');
-    notetopBarTitle.setAttribute('type', 'text');
-    notetopBarTitle.setAttribute('placeholder', 'title');
+    let noteTopBarTitle = document.createElement('input');
+    noteTopBarTitle.setAttribute('type', 'text');
+    noteTopBarTitle.setAttribute('placeholder', 'title');
 
-    noteTopBar.appendChild(notetopBarTitle);
+    let noteTopBarDeleteButton = document.createElement('button');
+    noteTopBarDeleteButton.setAttribute('class', 'delete');
+
+    noteTopBar.appendChild(noteTopBarTitle);
+    noteTopBar.appendChild(noteTopBarDeleteButton);
     return noteTopBar;
 }
 
