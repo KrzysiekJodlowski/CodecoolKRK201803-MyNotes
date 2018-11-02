@@ -9,6 +9,12 @@ function getNoteDiv() {
 function getNoteTopBar() {
     let noteTopBar = document.createElement('span');
     noteTopBar.setAttribute('class', 'noteTopBar');
+
+    let notetopBarTitle = document.createElement('input');
+    notetopBarTitle.setAttribute('type', 'text');
+    notetopBarTitle.setAttribute('placeholder', 'title');
+
+    noteTopBar.appendChild(notetopBarTitle);
     return noteTopBar;
 }
 
