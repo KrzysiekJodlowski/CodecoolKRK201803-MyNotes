@@ -2,15 +2,20 @@
 
 function getNoteDiv() {
     let noteDiv = document.createElement('div');
-    noteDiv.setAttribute('class', 'note');
+    noteDiv.setAttribute('class', 'noteDiv');
     return noteDiv;
 }
 
-function getNewNote() {
+function getNoteTopBar() {
+    let noteTopBar = document.createElement('span');
+    noteTopBar.setAttribute('class', 'noteTopBar');
+    return noteTopBar;
+}
 
+function getNewNote() {
     let newNote = getNoteDiv();
-    // newNote.appendChild(appendTopBar());
-    // newNote.appendChild(appendContentArea());
+    newNote.appendChild(getNoteTopBar());
+    // newNote.appendChild(getNoteContentArea());
     return newNote;
 }
 
