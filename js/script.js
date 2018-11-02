@@ -22,10 +22,19 @@ function getNoteTopBar() {
     return noteTopBar;
 }
 
+function getNoteContentArea() {
+    let noteContentArea = document.createElement('textarea');
+    noteContentArea.setAttribute('class', 'content');
+    noteContentArea.setAttribute('rows', '22');
+    noteContentArea.setAttribute('cols', '40');
+    noteContentArea.setAttribute('placeholder', 'content');
+    return noteContentArea;
+}
+
 function getNewNote() {
     let newNote = getNoteDiv();
     newNote.appendChild(getNoteTopBar());
-    // newNote.appendChild(getNoteContentArea());
+    newNote.appendChild(getNoteContentArea());
     return newNote;
 }
 

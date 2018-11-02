@@ -32,7 +32,7 @@ html, body {
 }
 
 #addNote:focus {
-    outline:0;
+    outline: none;
 }
 
 .noteDiv {
@@ -63,7 +63,7 @@ html, body {
 .noteTopBar input {
     width: 215px;
     height: 25px;
-    margin: 12px 0 0 20px;
+    margin: 10px 0 0 10px;
     border-style: none;
     background-color: #F4B25D;
     font-size: 1.2em;    
@@ -75,10 +75,18 @@ html, body {
     color: #F1F2DA;
 }
 
+.noteTopBar input:active {
+    border-style: none;
+}
+
+.noteTopBar input:focus {
+    outline: none;
+}
+
 .delete {
     width: 25px;
     height: 25px;
-    margin: 12px 4px 0 0;
+    margin: 11px 4px 0 0;
     border-radius: 50%;
     border-style: none;
     background-color: #F38C68;
@@ -93,5 +101,22 @@ html, body {
 }
 
 .delete:focus {
-    outline: 0;
+    outline: none;
+}
+
+.content {
+    margin: 10px 20px 20px 20px;
+    border-style: none;
+    font-size: 1.1em;
+    color: #264458;
+}
+
+.content::placeholder {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #F4B25D;
+}
+
+.content:focus {
+    outline: none;
 }
