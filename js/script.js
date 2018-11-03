@@ -7,44 +7,44 @@ function getNoteDiv() {
 }
 
 function setDragEvent(newNote) {
-    let draggedEl;
+    let draggedElement;
     let grabPointY;
     let grabPointX;
     let offsetX = 0;
     let offsetY = 0;
 
-    function onDragStart(ev) {
-        if (ev.target.className.indexOf('noteTopBar') === -1) {
+    function onDragStart(event) {
+        if (event.target.className.indexOf('noteTopBar') === -1) {
             return;
         }
 
-        draggedEl = this;
-        grabPointY = ev.clientY - offsetY;
-        grabPointX = ev.clientX - offsetX;
+        draggedElement = this;
+        grabPointY = event.clientY - offsetY;
+        grabPointX = event.clientX - offsetX;
     };
 
-    function onDrag(ev) {
-        if (!draggedEl) {
+    function onDrag(event) {
+        if (!draggedElement) {
             return;
         }
 
-        let posX = ev.clientX - grabPointX;
-        let posY = ev.clientY - grabPointY;
-        offsetX = posX;
-        offsetY = posY;
+        let positionX = event.clientX - grabPointX;
+        let positionY = event.clientY - grabPointY;
+        offsetX = positionX;
+        offsetY = positionY;
 
-        if (posX < 0) {
-            posX = 0;
+        if (positionX < 0) {
+            positionX = 0;
         }
-        if (posY < 0) {
-            posY = 0;
+        if (positionY < 0) {
+            positionY = 0;
         }
 
-        draggedEl.style.transform = "translateX(" + posX + "px) translateY(" + posY + "px)";
+        draggedElement.style.transform = "translateX(" + positionX + "px) translateY(" + positionY + "px)";
     };
 
     function onDragEnd() {
-        draggedEl = null;
+        draggedElement = null;
         grabPointX = null;
         grabPointY = null;
     };
@@ -65,8 +65,8 @@ function getNoteTopBar() {
 
     let noteTopBarDeleteButton = document.createElement('button');
     noteTopBarDeleteButton.setAttribute('class', 'delete');
-    noteTopBarDeleteButton.addEventListener('click', function () {
-        let targetElement = event.target || event.srcElement;
+    noteTopBarDeleteButton.addEventListener('click', function (event) {
+        let targetElement = event.target;
         targetElement = targetElement.parentNode;
         targetElement = targetElement.parentNode;
         document.body.removeChild(targetElement);
