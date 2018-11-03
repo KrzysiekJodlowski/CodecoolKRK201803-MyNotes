@@ -7,18 +7,23 @@ function getNoteDiv() {
 }
 
 function setRandomNotePosition(newNote) {
+    let randomPositionX = Math.random() * 800;
+    let randomPositionY = Math.random() * 300;
     newNote.style.transform = "translateX(" +
-        Math.random() * 400 +
-        "px) translateY(" +
-        Math.random() * 400 + "px)";
+        randomPositionX + "px) translateY(" +
+        randomPositionY + "px)";
+    let randomPositions = [randomPositionX, randomPositionY];
+    return randomPositions;
 }
 
-function setDragEvent(newNote) {
+function setDragEvent(newNote, randomPositions) {
     let draggedElement;
     let grabPointY;
     let grabPointX;
-    let offsetX = 0;
-    let offsetY = 0;
+    let randomPositionX = randomPositions[0];
+    let offsetX = randomPositionX;
+    let randomPositionY = randomPositions[1];
+    let offsetY = randomPositionY;
 
     function onDragStart(event) {
         if (event.target.className.indexOf('noteTopBar') === -1) {
@@ -97,8 +102,8 @@ function getNewNote() {
     newNote.appendChild(getNoteTopBar());
     newNote.appendChild(getNoteContentArea());
 
-    setRandomNotePosition(newNote);
-    setDragEvent(newNote);
+    let randomPositions = setRandomNotePosition(newNote);
+    setDragEvent(newNote, randomPositions);
 
     return newNote;
 }
