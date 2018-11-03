@@ -64,7 +64,6 @@ function setDragEvent(newNote, randomPositions) {
     newNote.addEventListener('mousedown', onDragStart, false);
     document.addEventListener('mousemove', onDrag, false);
     document.addEventListener('mouseup', onDragEnd, false);
-
 }
 
 function getNoteTopBar() {
