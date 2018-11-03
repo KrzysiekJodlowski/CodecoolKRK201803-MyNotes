@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function getNoteDiv() {
     let noteDiv = document.createElement('div');
@@ -7,60 +7,51 @@ function getNoteDiv() {
 }
 
 function setDragEvent(newNote) {
+    let draggedEl;
+    let grabPointY;
+    let grabPointX;
+    let offsetX = 0;
+    let offsetY = 0;
 
-    let dragItem = newNote;
-    let dragBar = newNote.childNodes[0];
-
-    let active = false;
-    let currentX;
-    let currentY;
-    let initialX;
-    let initialY;
-    let xOffset = 0;
-    let yOffset = 0;
-
-    dragBar.addEventListener("mousedown", dragStart, false);
-    dragBar.addEventListener("mouseup", dragEnd, false);
-    dragBar.addEventListener("mousemove", drag, false);
-
-    function dragStart(e) {
-        dragBar = e.target || e.srcElement;
-
-        initialX = e.clientX - xOffset;
-        initialY = e.clientY - yOffset;
-
-        if (e.target === dragBar) {
-            active = true;
+    function onDragStart(ev) {
+        if (ev.target.className.indexOf('noteTopBar') === -1) {
+            return;
         }
-    }
 
-    function dragEnd(e) {
-        dragBar = e.target || e.srcElement;
-
-        initialX = currentX;
-        initialY = currentY;
-
-        active = false;
-    }
-
-    function drag(e) {
-        dragBar = e.target || e.srcElement;
-
-        if (active) {
-
-            currentX = e.clientX - initialX;
-            currentY = e.clientY - initialY;
-
-            xOffset = currentX;
-            yOffset = currentY;
-
-            setTranslate(currentX, currentY, dragItem);
-        }
-    }
-
-    function setTranslate(xPosition, yPosition, el) {
-        el.style.transform = "translate3d(" + xPosition + "px, " + yPosition + "px, 0)";
+        draggedEl = this;
+        grabPointY = ev.clientY - offsetY;
+        grabPointX = ev.clientX - offsetX;
     };
+
+    function onDrag(ev) {
+        if (!draggedEl) {
+            return;
+        }
+
+        let posX = ev.clientX - grabPointX;
+        let posY = ev.clientY - grabPointY;
+        offsetX = posX;
+        offsetY = posY;
+
+        if (posX < 0) {
+            posX = 0;
+        }
+        if (posY < 0) {
+            posY = 0;
+        }
+
+        draggedEl.style.transform = "translateX(" + posX + "px) translateY(" + posY + "px)";
+    };
+
+    function onDragEnd() {
+        draggedEl = null;
+        grabPointX = null;
+        grabPointY = null;
+    };
+
+    newNote.addEventListener('mousedown', onDragStart, false);
+    document.addEventListener('mousemove', onDrag, false);
+    document.addEventListener('mouseup', onDragEnd, false);
 
 }
 
