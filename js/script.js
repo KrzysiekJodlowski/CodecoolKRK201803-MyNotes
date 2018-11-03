@@ -6,6 +6,13 @@ function getNoteDiv() {
     return noteDiv;
 }
 
+function setRandomNotePosition(newNote) {
+    newNote.style.transform = "translateX(" +
+        Math.random() * 400 +
+        "px) translateY(" +
+        Math.random() * 400 + "px)";
+}
+
 function setDragEvent(newNote) {
     let draggedElement;
     let grabPointY;
@@ -90,6 +97,7 @@ function getNewNote() {
     newNote.appendChild(getNoteTopBar());
     newNote.appendChild(getNoteContentArea());
 
+    setRandomNotePosition(newNote);
     setDragEvent(newNote);
 
     return newNote;
