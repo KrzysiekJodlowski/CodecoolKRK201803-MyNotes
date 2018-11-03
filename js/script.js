@@ -48,7 +48,6 @@ function setDragEvent(newNote) {
 
         if (active) {
 
-            // e.preventDefault();
             currentX = e.clientX - initialX;
             currentY = e.clientY - initialY;
 
@@ -91,8 +90,6 @@ function getNoteTopBar() {
 function getNoteContentArea() {
     let noteContentArea = document.createElement('textarea');
     noteContentArea.setAttribute('class', 'content');
-    noteContentArea.setAttribute('rows', '22');
-    noteContentArea.setAttribute('cols', '40');
     noteContentArea.setAttribute('placeholder', 'content');
     return noteContentArea;
 }

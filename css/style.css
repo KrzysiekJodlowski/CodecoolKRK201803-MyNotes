@@ -107,6 +107,8 @@ html, body {
 
 .content {
     margin: 10px 20px 20px 20px;
+    box-sizing: border-box;
+    height: 100%;
     border-style: none;
     font-size: 1.2em;
     color: #264458;
