@@ -52,10 +52,14 @@ function setDragEvent(newNote, randomPositions) {
             positionY = 0;
         }
 
-        draggedElement.style.transform = "translateX(" + positionX + "px) translateY(" + positionY + "px)";
+        draggedElement.style.transform = "translateX(" +
+            positionX + "px) translateY(" +
+            positionY + "px)";
+        draggedElement.style.filter = "drop-shadow(10px 10px 1px rgba(0,0,0,0.2))"
     };
 
     function onDragEnd() {
+        draggedElement.style.filter = "drop-shadow(10px 10px 1px rgba(0,0,0,0.1))"
         draggedElement = null;
         grabPointX = null;
         grabPointY = null;
