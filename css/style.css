@@ -114,7 +114,7 @@ html, body {
     margin: 10px 5px 5px 5px;
     padding: 0px 15px 15px 15px;
     box-sizing: border-box;
-    min-width: 97%;
+    min-width: 310px;
     min-height: 350px;
     border-style: none;
     font-size: 1.2em;
