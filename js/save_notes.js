@@ -31,24 +31,3 @@ function saveNotes() {
     let noteObjects = getNoteObjects();
     localStorage.setItem('notes', JSON.stringify(noteObjects));
 }
-
-function setSaveNotesEvents() { /*
-
-    let inputs = getElementsByTagName('input');
-    for (input in inputs) {
-        input.addEventListener('onKeyup', function () {
-            alert("bu");
-            saveNotes();
-        }, false);
-    }
-
-    document.getElementsByTagName('input').addEventListener('onKeyup', function () {
-        saveNotes();
-    }, false);
-
-    document.getElementsByClassName('noteContent').addEventListener('onkKeyup', function () {
-        saveNotes();
-    }, false); */
-}
-
-setSaveNotesEvents();

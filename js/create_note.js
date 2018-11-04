@@ -39,9 +39,9 @@ function setDeleteButtonEvent(noteTopBarDeleteButton) {
     }, false);
 }
 
-function setInputEvent(inputElement) {
+function setInputEvent(inputElement) {      // TODO
 
-    inputElement.addEventListener('onchange', function () {
+    inputElement.addEventListener('onKeyup', function () {
         saveNotes();
     }, false);
 }
@@ -62,8 +62,8 @@ function getNoteTopBar(title = "") {
 
     let noteTopBarTitle = document.createElement('input');
     noteTopBarTitle.setAttribute('type', 'text');
+    noteTopBarTitle.setAttribute('onKeyup', 'saveNotes()');
     setTopBarTitle(noteTopBarTitle, title);
-    setInputEvent(noteTopBarTitle);
 
     let noteTopBarDeleteButton = getTopBarDeleteButton()
 
@@ -86,8 +86,8 @@ function getNoteContentArea(content = "") {
 
     let noteContentArea = document.createElement('textarea');
     noteContentArea.setAttribute('class', 'noteContent');
+    noteContentArea.setAttribute('onKeyup', 'saveNotes()');
     setContent(noteContentArea, content);
-    setInputEvent(noteContentArea);
 
     return noteContentArea;
 }
