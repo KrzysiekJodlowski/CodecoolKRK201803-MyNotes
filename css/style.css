@@ -1,8 +1,7 @@
 html, body {
     position: relative;
     height: 100%;
-    width: 100%;
-    padding: 2%;
+    width: 100%;    
     background-color: #F1F2DA;
     font-family: 'Josefin Sans', sans-serif;
 }
@@ -11,7 +10,8 @@ html, body {
     position: absolute;
     height: 120px;
     width: 120px;
-    padding-top: 5px;
+    top: 5%;
+    left: 3%;
     border-radius: 50%;
     border-style: none;
     background-color: #F4DC79;
@@ -37,10 +37,9 @@ html, body {
 }
 
 .noteDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     position: absolute;
+    display: flex;
+    flex-direction: column;    
     min-width: 300px;
     min-height: 400px;
     border-radius: 15px 15px 0 0;
@@ -111,11 +110,11 @@ html, body {
 }
 
 .noteContent {
+    flex: 1;
     margin: 10px 5px 5px 5px;
     padding: 0px 15px 15px 15px;
     box-sizing: border-box;
     min-width: 310px;
-    min-height: 350px;
     border-style: none;
     font-size: 1.2em;
     color: #264458;

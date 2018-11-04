@@ -32,15 +32,23 @@ function saveNotes() {
     localStorage.setItem('notes', JSON.stringify(noteObjects));
 }
 
-function setSaveNotesEvents() {
+function setSaveNotesEvents() { /*
 
-    document.getElementsByTagName('input').addEventListener('keyup', function () {
+    let inputs = getElementsByTagName('input');
+    for (input in inputs) {
+        input.addEventListener('onKeyup', function () {
+            alert("bu");
+            saveNotes();
+        }, false);
+    }
+
+    document.getElementsByTagName('input').addEventListener('onKeyup', function () {
         saveNotes();
     }, false);
 
-    document.getElementsByClassName('noteContent').addEventListener('keyup', function () {
+    document.getElementsByClassName('noteContent').addEventListener('onkKeyup', function () {
         saveNotes();
-    }, false);
+    }, false); */
 }
 
 setSaveNotesEvents();
