@@ -22,7 +22,7 @@ for (let index = 0; index < notes.length; index++) {
     }
 
     let savedNoteTopBarDeleteButton = document.createElement('button');
-    savedNoteTopBarDeleteButton.setAttribute('class', 'delete');
+    savedNoteTopBarDeleteButton.setAttribute('class', 'deleteNoteButton');
     savedNoteTopBarDeleteButton.addEventListener('click', function (event) {
         let targetElement = event.target;
         targetElement = targetElement.parentNode;
@@ -37,7 +37,7 @@ for (let index = 0; index < notes.length; index++) {
 
 
     let savedNoteContentArea = document.createElement('textarea');
-    savedNoteContentArea.setAttribute('class', 'content');
+    savedNoteContentArea.setAttribute('class', 'noteContent');
     if (notes[index].content != "") {
         savedNoteContentArea.value = notes[index].content;
     } else {
@@ -150,7 +150,7 @@ function getNoteTopBar() {
     noteTopBarTitle.setAttribute('placeholder', 'title');
 
     let noteTopBarDeleteButton = document.createElement('button');
-    noteTopBarDeleteButton.setAttribute('class', 'delete');
+    noteTopBarDeleteButton.setAttribute('class', 'deleteNoteButton');
     noteTopBarDeleteButton.addEventListener('click', function (event) {
         let targetElement = event.target;
         targetElement = targetElement.parentNode;
@@ -166,7 +166,7 @@ function getNoteTopBar() {
 
 function getNoteContentArea() {
     let noteContentArea = document.createElement('textarea');
-    noteContentArea.setAttribute('class', 'content');
+    noteContentArea.setAttribute('class', 'noteContent');
     noteContentArea.setAttribute('placeholder', 'content');
     return noteContentArea;
 }
@@ -202,13 +202,13 @@ function saveNotes() {
     localStorage.setItem('notes', JSON.stringify(notesArray));
 }
 
-document.getElementById('addNote').addEventListener('click', function () {
+document.getElementById('addNoteButton').addEventListener('click', function () {
     let newNote = getNewNote();
     document.body.appendChild(newNote);
 }, false);
 document.getElementsByClassName('.noteTopBar input').addEventListener('keyup', function () {
     saveNotes();
 }, false);
-document.getElementsByClassName('content').addEventListener('keyup', function () {
+document.getElementsByClassName('noteContent').addEventListener('keyup', function () {
     saveNotes();
 }, false);

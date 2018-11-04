@@ -7,7 +7,7 @@ html, body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-#addNote {
+#addNoteButton {
     position: absolute;
     height: 120px;
     width: 120px;
@@ -22,17 +22,17 @@ html, body {
     color: #FFF;
 }
 
-#addNote:hover {
+#addNoteButton:hover {
     background-color: #F4B25D;
 }
 
-#addNote:active {
+#addNoteButton:active {
     transform: translate(5px, 5px);
     filter: drop-shadow(0 0 0 rgba(0,0,0,0.3));
     color: #F4DC79;
 }
 
-#addNote:focus {
+#addNoteButton:focus {
     outline: none;
 }
 
@@ -89,7 +89,7 @@ html, body {
     outline: none;
 }
 
-.delete {
+.deleteNoteButton {
     width: 25px;
     height: 25px;
     margin: 15px 15px 0 0;
@@ -98,19 +98,19 @@ html, body {
     background-color: #F38C68;
 }
 
-.delete:hover {
+.deleteNoteButton:hover {
     background-color: #F4DC79;
 }
 
-.delete:active {
+.deleteNoteButton:active {
     background-color: #F4B25D;
 }
 
-.delete:focus {
+.deleteNoteButton:focus {
     outline: none;
 }
 
-.content {
+.noteContent {
     margin: 10px 5px 5px 5px;
     padding: 0px 15px 15px 15px;
     box-sizing: border-box;
@@ -122,11 +122,11 @@ html, body {
     font-family: 'Roboto Slab', serif;
 }
 
-.content::placeholder {
+.noteContent::placeholder {
     font-style: italic;
     color: #F4B25D;
 }
 
-.content:focus {
+.noteContent:focus {
     outline: none;
 }
