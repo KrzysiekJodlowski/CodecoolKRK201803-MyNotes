@@ -31,6 +31,7 @@ function getNoteFromSavedObject(noteObject) {
     let savedNoteTopBar = getNoteTopBar(noteObject.title);
     savedNote.appendChild(savedNoteTopBar);
     let savedNoteContentArea = getNoteContentArea(noteObject.content);
+    savedNoteContentArea.style.resize = 'none';
     savedNote.appendChild(savedNoteContentArea);
 
     let savedPosition = [noteObject.xPosition, noteObject.yPosition];
