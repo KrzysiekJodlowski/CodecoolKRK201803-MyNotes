@@ -39,13 +39,6 @@ function setDeleteButtonEvent(noteTopBarDeleteButton) {
     }, false);
 }
 
-function setInputEvent(inputElement) {      // TODO
-
-    inputElement.addEventListener('onKeyup', function () {
-        saveNotes();
-    }, false);
-}
-
 function getTopBarDeleteButton() {
 
     let noteTopBarDeleteButton = document.createElement('button');

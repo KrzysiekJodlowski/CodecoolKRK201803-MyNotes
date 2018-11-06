@@ -32,4 +32,8 @@ function saveNotes() {
     localStorage.setItem('notes', JSON.stringify(noteObjects));
 }
 
-window.addEventListener('beforeunload', saveNotes(), false);
+window.onbeforeunload = saveNotes();
+window.addEventListener('beforeunload', function (e) {
+    saveNotes();
+    return e;
+}, false);
