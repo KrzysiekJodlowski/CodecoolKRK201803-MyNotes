@@ -14,16 +14,6 @@ function setSavedNotePosition(savedNote, savedPosition) {
         yPosition + "px)";
 }
 
-function setSavedSizes(savedNote, savedPositions) {
-
-    let width = savedPositions[0];
-    let height = savedPositions[1];
-
-    savedNote.style.width = width.toString() + 'px';
-    savedNote.style.height = height.toString() + 'px';
-
-}
-
 function getNoteFromSavedObject(noteObject) {
 
     let savedNote = getNoteDiv();
@@ -31,18 +21,15 @@ function getNoteFromSavedObject(noteObject) {
     let savedNoteTopBar = getNoteTopBar(noteObject.title);
     savedNote.appendChild(savedNoteTopBar);
     let savedNoteContentArea = getNoteContentArea(noteObject.content);
-    savedNoteContentArea.style.resize = 'none';
+    // savedNoteContentArea.style.resize = 'none';
     savedNote.appendChild(savedNoteContentArea);
 
     let savedPosition = [noteObject.xPosition, noteObject.yPosition];
     setSavedNotePosition(savedNote, savedPosition);
-    let savedSizes = [noteObject.width, noteObject.height];
-    setSavedSizes(savedNote, savedSizes);
 
     setDragEvent(savedNote, savedPosition);
 
     return savedNote;
-
 }
 
 function createNotesFromSavedObjects(noteObjects) {

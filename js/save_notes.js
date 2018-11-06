@@ -6,8 +6,6 @@ function getNoteObject(currentNote) {
     let currentNoteObject = {
         title: currentNote.childNodes[0].childNodes[0].value,
         content: currentNote.childNodes[1].value,
-        width: Math.round(currentNote.offsetWidth),
-        height: Math.round(currentNote.offsetHeight),
         xPosition: Math.round(notePosition.left),
         yPosition: Math.round(notePosition.top)
     };
