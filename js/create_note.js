@@ -62,7 +62,6 @@ function getNoteTopBar(title = "") {
 
     let noteTopBarTitle = document.createElement('input');
     noteTopBarTitle.setAttribute('type', 'text');
-    noteTopBarTitle.setAttribute('onKeyup', 'saveNotes()');
     setTopBarTitle(noteTopBarTitle, title);
 
     let noteTopBarDeleteButton = getTopBarDeleteButton()
@@ -86,7 +85,6 @@ function getNoteContentArea(content = "") {
 
     let noteContentArea = document.createElement('textarea');
     noteContentArea.setAttribute('class', 'noteContent');
-    noteContentArea.setAttribute('onKeyup', 'saveNotes()');
     setContent(noteContentArea, content);
 
     return noteContentArea;

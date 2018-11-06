@@ -48,7 +48,6 @@ function setDragEvent(newNote, notePosition) {
         grabPointX = null;
         grabPointY = null;
 
-        saveNotes();
     };
 
     newNote.addEventListener('mousedown', onDragStart, false);

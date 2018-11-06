@@ -31,3 +31,5 @@ function saveNotes() {
     let noteObjects = getNoteObjects();
     localStorage.setItem('notes', JSON.stringify(noteObjects));
 }
+
+window.addEventListener('beforeunload', saveNotes(), false);
